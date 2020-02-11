@@ -6,9 +6,10 @@ use Exception;
 use Illuminate\Filesystem\Filesystem;
 use InvalidArgumentException;
 use Mockery;
+use PHPUnit\Framework\TestCase;
 use RuntimeException;
 
-class ZipperTest extends \PHPUnit_Framework_TestCase
+class ZipperTest extends TestCase
 {
     /**
      * @var \Chumper\Zipper\Zipper
@@ -20,14 +21,14 @@ class ZipperTest extends \PHPUnit_Framework_TestCase
      */
     public $file;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->file = Mockery::mock(new Filesystem());
         $this->archive = new Zipper($this->file);
         $this->archive->make('foo', new ArrayArchive('foo', true));
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         Mockery::close();
     }
@@ -84,7 +85,7 @@ class ZipperTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('foo', $this->archive->getFileContent('foo'));
         $this->assertSame('foo.bar', $this->archive->getFileContent('foo.bar'));
     }
-    
+
     public function testAddAndGetWithCustomFilenameArray()
     {
         $this->file->shouldReceive('isFile')->with('foo.bar')
