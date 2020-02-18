@@ -1,3 +1,5 @@
+# Laravel 6 Support for Chumper/Zipper
+
 # Note
 
 I haven't updated this package in a long time except merging PRs. The last time I was using this package was with PHP5.
