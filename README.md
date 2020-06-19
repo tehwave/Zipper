@@ -1,4 +1,4 @@
-# Laravel 6 Support for Chumper/Zipper
+# Laravel 6+ Support for Chumper/Zipper
 
 # Note
 
@@ -14,6 +14,7 @@ This is a simple Wrapper around the ZipArchive methods with some handy functions
 ## Installation
 
 1. Add this package to the list of required packages, inside `composer.json`
+  * for Laravel 7: `"sammyjo20/zipper": "^3.0"`
   * for Laravel 6: `"sammyjo20/zipper": "^2.0"`
   * for Laravel 5: `"chumper/zipper": "1.0.x"`
   * ~~for Laravel 4: `"chumper/zipper": "0.5.x"`~~
